@@ -1,0 +1,5 @@
+Il faut tout d'abord éditer /etc/hosts (il faut être root) :
+42.19.122.85	intra.42.fr
+
+Il faut ensuite forcer la mise à jour du cache DNS (en tant que root):
+dscacheutil -flushcache

@@ -1,0 +1,2 @@
+du -sh /var/*
+(en tant que root)

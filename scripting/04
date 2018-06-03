@@ -1,0 +1,16 @@
+#!/bin/bash
+if [[ ! /tmp/crontab_tmp ]]
+then
+	cp -R /etc/crontab /tmp/crontab_tmp
+elif [[ /etc/crontab != /tmp/crontab_tmp ]]
+then
+	cp -R /etc/crontab /tmp/crontab_tmp
+	mail -s 'The crontab file has changed' root
+	echo 'Crontab is changed'
+fi
+
+# crontab -l > tmp # export de la crontab
+# echo '0 0 * * * mon_script.sh' >> tmp
+# crontab tmp # import de la crontab
+# rm -f tmp
+# exit
